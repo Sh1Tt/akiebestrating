@@ -16,9 +16,20 @@ export default function Home() {
           Here comes the Akie App..
         </h1>
 
-        <p className={styles.description}>
-          Powered by Handshake
+        <p className={styles.text}>
+          Powered by:
         </p>
+        <div className={styles.references}>
+          <h2 className={styles.reference}>
+            Vercel
+          </h2>
+          <p className={styles.and}>
+            &
+          </p>
+          <h2 className={styles.reference}>
+            Handshake
+          </h2>
+        </div>
       </main>
     </div>
   )
