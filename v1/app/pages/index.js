@@ -14,7 +14,8 @@ export default function Home() {
         <meta name="description" content="Online planning and registration app for Akie Bestrating VOF" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>  
+      <main className={styles.main}>
+        <div id="xmas"></div> 
         <div className={styles.background}>
           <Image 
             src={backgroundSrc} 
