@@ -1,6 +1,10 @@
 import Head from 'next/head'
+
 import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
+
+import backgroundSrc from '../public/images/background-xmas.jpg'
 
 export default function Home() {
   return (
@@ -10,12 +14,16 @@ export default function Home() {
         <meta name="description" content="Online planning and registration app for Akie Bestrating VOF" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
+      <main className={styles.main}>  
+        <div className={styles.background}>
+          <Image 
+            src={backgroundSrc} 
+            alt="X-mas background"
+          />
+        </div>
         <h1 className={styles.title}>
           Here comes the Akie App..
         </h1>
-
         <p className={styles.text}>
           Powered by:
         </p>
