@@ -1,14 +1,18 @@
 import Head from 'next/head'
 
+import { useContext } from 'react'
+
+import UserContext from '../../components/context/User'
+
 import Calender from '../../components/Calender'
+
+import Stats from '../../components/dashboard/month/stats'
 
 import styles from '../../styles/Dashboard.module.css'
 
-export default function Dashboard ( { month } ) {
-	const user = {
-		id: 1,
-		name: 'Maurice'
-	}
+const Dashboard = ( { month } ) =>
+{
+	const { user } = useContext( UserContext )
 
 	return (
 		<>
@@ -20,14 +24,18 @@ export default function Dashboard ( { month } ) {
 			<main >
 				<div className={styles.message}>
 					<h4 className={styles.hello}>
-						Welcome {user.name}!
+						Welcome {user}!
 					</h4>
+					<div className={styles.settings}>
+						<p>Personalize your dashboard</p>
+					</div>
 				</div>
 				<div className={styles.outercontainer}>
 					<div className={styles.innercontainer}>
 						<div className={styles.calenderWidget}>
-							<div  className={styles.widget}>
+							<div className={styles.widget}>
 								<Calender month={month} />
+								<Stats month={month} />
 							</div>
 						</div>
 
@@ -41,21 +49,38 @@ export default function Dashboard ( { month } ) {
 					</div>
 				</div>
 			</main>
+			<aside>
+				<div className={styles.aside}>
+					<div className={styles.sidemenu}>
+						<div className={styles.sidemenuoption}>
+							<h4>Agenda</h4>
+							<ul className={styles.submenu}>
+								<li key={0}>Create event</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</aside>
 		</>
 	)
 
 }
 
-export const getStaticProps = async 	() =>
+export const getServerSideProps = async () =>
 {
-	const res = await fetch( `http://api.cloudshipenterprise.net:3000/month/2021/12` )
+	const __d = new Date()
 
-	const month = await res.json()
+	const endpoint = `http://api.cloudshipenterprise.net:3000/month/${__d.getFullYear()}/${__d.getMonth() + 1}`
+
+	const month = await fetch( endpoint )
+	.then( res => res.json() )
 
 	return {
 		props:
 		{
 			month
 		}
-	}	
+	}
 }
+
+export default Dashboard
