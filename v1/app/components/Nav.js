@@ -1,12 +1,12 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import Link from 'next/link'
+import Link from "next/link";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import navStyles from '../styles/Nav.module.css'
+import navStyles from "../styles/Nav.module.css";
 
-import Logo from '../public/images/temp-logo.png'
+import Logo from "../public/images/temp-logo.png";
 
 const Nav = () =>
 {

@@ -1,4 +1,4 @@
-import Day from './Day'
+import Day from "./Day";
 
 import calenderStyles from '../../styles/Calender.module.css'
 
@@ -18,4 +18,4 @@ const Week = ( { records, events } ) =>
 
 }
 
-export default Week
+export default Week;

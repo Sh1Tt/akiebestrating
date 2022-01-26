@@ -1,6 +1,6 @@
-import eventsStyles from '../../styles/Events.module.css'
+import eventsStyles from "../../styles/Events.module.css";
 
-export default ( { event } ) => (
+const Details = ( { event } ) => (
 	<div className={eventsStyles.details}>
 		<div className={eventsStyles.title}>
 			<h1>
@@ -18,3 +18,5 @@ export default ( { event } ) => (
 		</div>
 	</div>
 )
+
+export default Details;

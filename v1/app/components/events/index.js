@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import Details from './Details'
+import Details from "./Details";
 
-import dashboardStyles from '../../styles/Dashboard.module.css'
+import dashboardStyles from "../../styles/Dashboard.module.css";
 
-import eventsStyles from '../../styles/Events.module.css'
+import eventsStyles from "../../styles/Events.module.css";
 
-export default ( { events } ) =>
+const Events = ( { events } ) =>
 {
 	const [ event, selectEvent ] = useState( events[0] )
 
@@ -64,3 +64,5 @@ export default ( { events } ) =>
 	)
 
 }
+
+export default Events;

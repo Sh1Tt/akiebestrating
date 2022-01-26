@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-import styles from '../styles/Sidemenu.module.css'
+import styles from "../styles/Sidemenu.module.css";
 
-export default () =>
+const Sidemenu = () =>
 {
 	function toggleDropdown( identifier )
 	{
@@ -20,16 +20,20 @@ export default () =>
 			<div className={styles.list}>
 				<div className={styles.item}>
 					<Link href="/dashboard">
-						<h4>
-							Dashboard
-						</h4>
+						<a>
+							<h4>
+								Dashboard
+							</h4>
+						</a>
 					</Link>
 				</div>
 				<div className={styles.item}>
 					<Link href="/dashboard">
-						<h4>
-							Calender
-						</h4>
+						<a>
+							<h4>
+								Calender
+							</h4>
+						</a>
 					</Link>
 				</div>
 				<div className={styles.item}>
@@ -79,3 +83,5 @@ export default () =>
 	)
 
 }
+
+export default Sidemenu;

@@ -1,6 +1,6 @@
-import dashboardStyle from '../../../styles/Dashboard.module.css'
+import dashboardStyle from "../../../styles/Dashboard.module.css";
 
-import dateId from '../../../utils/dateId'
+import dateId from "../../../utils/dateId";
 
 const Stats = ( { events } ) =>
 {
@@ -23,4 +23,4 @@ const Stats = ( { events } ) =>
 	)
 }
 
-export default Stats
+export default Stats;

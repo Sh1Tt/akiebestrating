@@ -1,14 +1,14 @@
-import Week from './calender/Week'
+import Week from "./calender/Week";
 
-import calenderStyles from '../styles/Calender.module.css'
+import calenderStyles from "../styles/Calender.module.css";
 
 const Calender = ( { month, events }) =>
 {
-	const weeks = [ ...new Set( month.map( record => record.date_week ) ) ]
+	const weeks = [ ...new Set( month.map( record => record.date_week ) ) ];
 	
 	const viewHandler = e =>
 	{
-		alert( `You selected view: ${e.target.name}` )
+		alert( `You selected view: ${e.target.name}` );
 	}
 
 	return (
@@ -55,8 +55,8 @@ const Calender = ( { month, events }) =>
 				} )}
 			</div>
 		</div>
-	)
+	);
 
 }
 
-export default Calender
+export default Calender;

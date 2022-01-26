@@ -1,8 +1,6 @@
-import Link from 'next/link'
+import Event from "../events/calender/Date";
 
-import Event from '../events/calender/Date'
-
-import calenderStyles from '../../styles/Calender.module.css'
+import calenderStyles from "../../styles/Calender.module.css";
 
 const Day = ( { record, events } ) =>
 {
@@ -24,4 +22,4 @@ const Day = ( { record, events } ) =>
 	)
 }
 
-export default Day
+export default Day;
