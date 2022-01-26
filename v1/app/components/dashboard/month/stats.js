@@ -10,7 +10,7 @@ const Dashboardstats = ( { events } ) =>
 
 	return (
 		<>
-			<div className="zline" className={dashboardStyle.zline}></div>
+			<div className={dashboardStyle.zline}></div>
 			<div id="planningstats" className={dashboardStyle.statsWidget}>
 				<h2>
 					{new Date().toLocaleDateString( process.env.LANG || 'en-US', { day: '2-digit', month: 'long', year: 'numeric' } )}
