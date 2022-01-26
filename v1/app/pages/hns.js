@@ -1,5 +1,7 @@
 import Hns from "../components/form/Hns";
 
-export default () => (
+const Hnspage = () => (
 	<Hns />
 )
+
+export default Hnspage;
