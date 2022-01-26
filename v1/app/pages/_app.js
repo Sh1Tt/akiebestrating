@@ -8,6 +8,8 @@ import UserContext from '../components/context/User'
 
 import Layout from '../components/Layout'
 
+import '../styles/root.css'
+
 import '../styles/globals.css'
 
 export default class MyApp extends App {
@@ -35,18 +37,18 @@ export default class MyApp extends App {
     }
     else
     {
-      Router.push( '/' )
+      Router.push( '/signin' )
   
     }
   
   }
 
-  signIn = ( username ) => 
+  signIn = ( username, password ) => 
   {
     localStorage.setItem( this.store_id.username, username )
 
-    this.setState(
-      { user: username }, () => { 
+    this.setState( { user: username }, () => 
+      { 
         Router.push( '/dashboard' ) 
       }
     )

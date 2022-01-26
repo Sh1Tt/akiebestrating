@@ -1,0 +1,44 @@
+.list
+{
+	margin: 120px 24px auto 32px;
+	color:  var( --og-gray );
+	text-shadow: 1px 1px 4px solid black;
+}
+
+.item
+{
+	width: 100%; 
+	height: auto; 
+	margin: 0; 
+	padding: 0;
+	cursor: pointer;
+}
+
+.item:hover
+{
+	color: var( --og-gray-hov );
+}
+
+
+.dropdown
+{
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.dropdownItem
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: -webkit-fill-available;
+	height: auto;
+	margin: 1rem 0 0 0;
+	padding: 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+.dropdownItem:hover
+{
+	color: var( --og-gray-hov );	
+}

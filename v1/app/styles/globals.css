@@ -9,23 +9,39 @@ body {
   background-color: rgba( 8, 8, 8, .8 );
   color: rgb( 255, 255, 255 );
   color: rgba( 255, 255, 255, .97 );
-  color: black;
+  color: white;
 }
-div#__next
+#__next
 {
-  /*background-image: url( ../public/images/background-xmas.jpg );*/
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: white;
   top: 0;
   height: auto;
   left: 0;
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
 }
+
+@media only screen and ( min-width: 1420px )
+{
+  #__centerfold
+  {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  main
+  {
+    flex: 1 1 0px;
+  }
+  aside
+  {
+    flex: 0 0 15%;
+    border-right: .05rem solid lightgray;
+  }
+}
+
 div#xmas
 {
   background-image: url( ../public/images/background-xmas.jpg );  
@@ -47,28 +63,30 @@ a {
 
 nav
 {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   position: -webkit-sticky !important;
   position: sticky !important;
   top: 0;
-  height: 72px;
+  height: 78px;
   left: 0;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 1rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: rgb( 237, 7, 19 );
-  background-color: rgba( 237, 7, 19, .87 );
-  background-color: white;
+  /*background-color: var( --nb-white );*/
   backdrop-filter: blur( 2px );
   z-index: 972478562985;
-  color: rgb( 255, 255, 255 );
-  color: rgba( 255, 255, 255, .97 );
-  text-shadow: 1px 1px 3px rgb(8 8 8 / 80%);
+  /*color: rgb( 255, 255, 255 );*/
+  /*color: rgba( 255, 255, 255, .97 );*/
+  /*text-shadow: 1px 1px 3px rgb(8 8 8 / 80%);*/
   text-align: center;
   border-bottom: .05rem solid rgba( 61, 61, 61, .3 );
-;
+  white-space: nowrap;
 }

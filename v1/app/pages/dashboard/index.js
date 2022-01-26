@@ -4,13 +4,15 @@ import { useContext } from 'react'
 
 import UserContext from '../../components/context/User'
 
-import Calender from '../../components/Calender'
+import Sidemenu from '../../components/Sidemenu'
 
 import Stats from '../../components/dashboard/month/stats'
 
-import styles from '../../styles/Dashboard.module.css'
+import Calender from '../../components/Calender'
 
-const Dashboard = ( { month } ) =>
+import dashboardStyles from '../../styles/Dashboard.module.css'
+
+const Dashboard = ( { month, events } ) =>
 {
 	const { user } = useContext( UserContext )
 
@@ -21,46 +23,44 @@ const Dashboard = ( { month } ) =>
 				<meta name="description" content="Online planning and registration user dashboard" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main >
-				<div className={styles.message}>
-					<h4 className={styles.hello}>
-						Welcome {user}!
-					</h4>
-					<div className={styles.settings}>
-						<p>Personalize your dashboard</p>
+			<div id="__centerfold">
+				<main >
+					<div className={dashboardStyles.message}>
+						<h4 className={dashboardStyles.hello}>
+							Welcome {user}!
+						</h4>
+						<div className={dashboardStyles.settings}>
+							<i className="material-icons">
+								edit
+							</i>
+							<p className={dashboardStyles.settingslink}>
+								Personalize your dashboard
+							</p>
+						</div>
 					</div>
-				</div>
-				<div className={styles.outercontainer}>
-					<div className={styles.innercontainer}>
-						<div className={styles.calenderWidget}>
-							<div className={styles.widget}>
-								<Calender month={month} />
-								<Stats month={month} />
+					<div className={dashboardStyles.outercontainer}>
+						<div className={dashboardStyles.innercontainer}>
+							<div className={dashboardStyles.calenderWidget}>
+								<div className={dashboardStyles.widget}>
+									<Calender month={month} events={events} />
+									<Stats month={month} events={events} />
+								</div>
+							</div>
+
+							<div className={dashboardStyles.accountWidget}>
+								<div className={dashboardStyles.widget}></div>
+							</div>
+
+							<div className={dashboardStyles.planningWidget}>
+								<div className={dashboardStyles.widget}></div>
 							</div>
 						</div>
-
-						<div className={styles.accountWidget}>
-							<div className={styles.widget}></div>
-						</div>
-
-						<div className={styles.planningWidget}>
-							<div className={styles.widget}></div>
-						</div>
 					</div>
-				</div>
-			</main>
-			<aside>
-				<div className={styles.aside}>
-					<div className={styles.sidemenu}>
-						<div className={styles.sidemenuoption}>
-							<h4>Agenda</h4>
-							<ul className={styles.submenu}>
-								<li key={0}>Create event</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</aside>
+				</main>
+				<aside>
+					<Sidemenu />
+				</aside>
+			</div>
 		</>
 	)
 
@@ -70,15 +70,41 @@ export const getServerSideProps = async () =>
 {
 	const __d = new Date()
 
-	const endpoint = `http://api.cloudshipenterprise.net:3000/month/${__d.getFullYear()}/${__d.getMonth() + 1}`
+	const yyyy = __d.getFullYear()
 
-	const month = await fetch( endpoint )
+	const mm = `0${__d.getMonth() + 1}`.slice( -2 )
+
+	const endpoint = {
+		month: `http://api.cloudshipenterprise.net:3000/v1/month/${yyyy}/${mm}`,
+		events:
+		{
+			basic: `http://localhost:3000/api/calender/events/basic`
+		}
+	}
+
+	const month = await fetch( endpoint.month,
+	{
+		method: 'GET',
+		headers:
+		{ 
+			'x-api-key' : `${process.env.DEV_API_KEY}`,
+			'Accept-Encoding' : 'deflate, gzip'
+
+		}
+	} )
 	.then( res => res.json() )
+
+	const events = await fetch( endpoint.events.basic )
+	.then( res => res.json() )
+	.then( data => data.data )
+
+	console.log( month )
 
 	return {
 		props:
 		{
-			month
+			month,
+			events
 		}
 	}
 }

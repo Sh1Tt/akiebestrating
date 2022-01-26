@@ -1,0 +1,18 @@
+:root
+{
+  --myblue: rgba( 13, 27, 205, .9 );
+  --myblue-light8: rgba( 13, 27, 205, .83 );
+  --myblue-light7: rgba( 13, 27, 205, .69 );
+
+  --og-pink: rgba( 255, 29, 137, .7 );
+  --og-green: rgba( 17, 246, 71, .9 );
+  --og-gray: rgba( 61, 61, 61, .7 );
+  --og-gray-hov: rgba( 61, 61, 61, .975 );
+  --og-black: rgba( 8, 8, 8, .8 );
+
+  --nb-blue:  rgb( 0, 104, 255 );
+  --nb-blueFocus: rgb( 0, 87, 255 );
+  --nb-white: rgb( 255, 255, 255 );
+
+  --dash-desktop-w: 1280px;
+}

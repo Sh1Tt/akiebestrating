@@ -1,0 +1,11 @@
+.calenderdate
+{
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	margin: .375em 0 0;
+	padding: 0 .1775em;
+	height: .75em;
+	width: -webkit-fill-available;
+}
