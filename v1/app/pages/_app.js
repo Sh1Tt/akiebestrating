@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import App from 'next/app'
+import App from "next/app";
 
-import Router from 'next/router'
+import Router from "next/router";
 
-import UserContext from '../components/context/User'
+import UserContext from "../components/context/User";
 
-import Layout from '../components/Layout'
+import Layout from "../components/Layout";
 
-import '../styles/root.css'
+import "../styles/root.css";
 
-import '../styles/globals.css'
+import "../styles/globals.css";
 
 export default class MyApp extends App {
   initialState = {

@@ -1,18 +1,18 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import { useContext } from 'react'
+import { useContext } from "react";
 
-import UserContext from '../../components/context/User'
+import UserContext from "../../components/context/User";
 
-import Sidemenu from '../../components/Sidemenu'
+import Sidemenu from "../../components/Sidemenu";
 
-import Eventform from '../../components/form/event/create'
+import Eventform from "../../components/form/event/create";
 
-import styles from '../../styles/Dashboard.module.css'
+import styles from "../../styles/Dashboard.module.css";
 
-import pageStyles from '../../styles/Event.module.css'
+import pageStyles from "../../styles/Event.module.css";
 
-export default () => (
+const Newevent = () => (
 	<>
 		<Head>
 			<title>Plan a new Event | Akiebestrating</title>
@@ -29,3 +29,5 @@ export default () => (
 		</div>
 	</>
 )
+
+export default Newevent;

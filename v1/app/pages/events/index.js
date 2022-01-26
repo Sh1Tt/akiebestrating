@@ -1,14 +1,14 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import { useContext } from 'react'
+import { useContext } from "react";
 
-import UserContext from '../../components/context/User'
+import UserContext from "../../components/context/User";
 
-import Sidemenu from '../../components/Sidemenu'
+import Sidemenu from "../../components/Sidemenu";
 
-import Events from '../../components/events'
+import Events from "../../components/events";
 
-import eventsStyles from '../../styles/Event.module.css'
+import eventsStyles from "../../styles/Event.module.css";
 
 const Eventspage = ( { events } ) => (
 	<>
@@ -49,4 +49,4 @@ export const getServerSideProps = async () =>
 	}
 }
 
-export default Eventspage
+export default Eventspage;

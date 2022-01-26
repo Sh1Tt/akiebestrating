@@ -1,15 +1,15 @@
-import dbConnect from '../../../../../utils/dbConnect'
+import dbConnect from "../../../../../utils/dbConnect";
 
-import Basicevent from '../../../../../models/Basicevent'
+import Basicevent from "../../../../../models/Basicevent";
 
-dbConnect()
-
-export default async ( req, res ) =>
+const Event = async ( req, res ) =>
 {
+	dbConnect();
+
 	const {
 		query: { id },
 		method
-	} = req
+	} = req;
 
 	switch ( method ) {
 		case 'GET':
@@ -72,3 +72,5 @@ export default async ( req, res ) =>
 			break;
 	}	
 }
+
+export default Event;
