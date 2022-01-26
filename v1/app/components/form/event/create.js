@@ -1,37 +1,34 @@
-import { useState, useContext } from 'react';
-
+import { useState, useContext } from "react";
 
 const Form = () =>
 {
-  const [ __date, setDate ] = useState( `` )
+  const [ __date, setDate ] = useState( `` );
 
-  const [ __title, setTitle ] = useState( `` )
+  const [ __title, setTitle ] = useState( `` );
 
-  const [ __description, setDescription ] = useState( `` )
+  const [ __description, setDescription ] = useState( `` );
 
-  const [ __color, setColor ] = useState( `` )
+  const [ __color, setColor ] = useState( `` );
 
-
-  const [message, setMessage] = useState( `` )
-
+  const [message, setMessage] = useState( `` );
 
   const submitHandler = e =>
   {
-    e.preventDefault()
+    e.preventDefault();
 
     let err = []
 
-    if ( __date == '' ) err.push( "Please enter a valid date! {dd-mm-yyyy}" )
+    if ( __date == '' ) err.push( "Please enter a valid date! {dd-mm-yyyy}" );
 
-	if ( __title == '' ) err.push( "Please enter a title for your event!" )
+    if ( __title == '' ) err.push( "Please enter a title for your event!" );
 
-    if ( __description == '' ) err.push( "Please enter a description to the event" )
+    if ( __description == '' ) err.push( "Please enter a description to the event" );
 
-	if ( __color == '' ) err.push( "Please enter a valid color (value)!" )
+    if ( __color == '' ) err.push( "Please enter a valid color (value)!" );
 
-    if ( err ) setMessage ( [ ...err ] )
+    if ( err ) setMessage ( [ ...err ] );
   	
-  	return
+  	return;
 
   }
 

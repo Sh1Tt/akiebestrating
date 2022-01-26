@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-export default () =>
+const Hns = () =>
 {
   const [ namespace, setNamespace ] = useState( `` )
 
@@ -56,3 +56,5 @@ export default () =>
   )
 
 }
+
+export default Hns;

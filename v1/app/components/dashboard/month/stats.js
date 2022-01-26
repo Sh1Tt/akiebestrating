@@ -2,7 +2,7 @@ import dashboardStyle from "../../../styles/Dashboard.module.css";
 
 import dateId from "../../../utils/dateId";
 
-const Stats = ( { events } ) =>
+const Dashboardstats = ( { events } ) =>
 {
 	const currentId = dateId( new Date() )
 
@@ -23,4 +23,4 @@ const Stats = ( { events } ) =>
 	)
 }
 
-export default Stats;
+export default Dashboardstats;

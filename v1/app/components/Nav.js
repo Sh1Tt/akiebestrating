@@ -48,6 +48,7 @@ const Nav = () =>
 						priority
 						placeholder="blur"
 						layout="fill"
+						alt="Homelink image"
 					/>
 				</a>
 			</Link>
